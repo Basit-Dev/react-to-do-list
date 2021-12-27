@@ -1,0 +1,40 @@
+body,
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  border: solid green;
+  height: 100vh;
+}
+
+header {
+  background-color: lightskyblue;
+  height: 10%;
+  border-bottom: solid 5pt black;
+}
+header > h1 {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main {
+  height: 80%;
+}
+
+footer {
+  height: 10%;
+  background-color: lightskyblue;
+  border-top: solid 5pt black;
+}
+
+footer > p {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
