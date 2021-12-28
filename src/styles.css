@@ -30,9 +30,30 @@ main {
   text-align: left;
 }
 li {
+  position: relative;
+  padding: 10px;
   list-style-type: none;
-  margin: 5px;
+  display: flex;
+  align-items: center;
   font-size: 18px;
+  /* border: solid red; */
+}
+
+li > input {
+  position: absolute;
+  left: 0;
+  height: 30px;
+  width: 30px;
+}
+li > span {
+  padding-left: 35px;
+}
+li > .delete {
+  position: absolute;
+  right: 0;
+  height: 30px;
+  width: 30px;
+  color: rgb(223, 21, 21);
 }
 
 footer {
@@ -65,7 +86,7 @@ input[type="text"] {
 input[type="button"] {
   width: 20%;
   height: 100%;
-  background: #da0704;
+  background: #0b8f3b;
   color: white;
   border: none;
 }

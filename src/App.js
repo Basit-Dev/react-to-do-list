@@ -1,5 +1,6 @@
 import "./styles.css";
 import listItems from "./listItems";
+import { MdDelete } from "react-icons/md";
 import { useState } from "react";
 
 export default function App() {
@@ -18,8 +19,8 @@ export default function App() {
           return (
             <li>
               <input type="checkbox" />
-              {listItems.item}
-              <button>Delete</button>
+              <span>{listItems.item}</span>
+              <MdDelete className="delete" />
             </li>
           );
         })}
