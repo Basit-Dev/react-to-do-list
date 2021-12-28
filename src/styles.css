@@ -2,34 +2,43 @@ body,
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .App {
   font-family: sans-serif;
   text-align: center;
-  border: solid green;
   height: 100vh;
 }
 
 header {
   background-color: lightskyblue;
-  height: 10%;
-  border-bottom: solid 5pt black;
+  height: 15%;
+  border-bottom: solid 3pt #5f05ba;
 }
 header > h1 {
-  height: 100%;
+  height: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0px;
+  margin-bottom: 15px;
 }
 main {
   height: 80%;
+  padding: 20px;
+  text-align: left;
+}
+li {
+  list-style-type: none;
+  margin: 5px;
+  font-size: 18px;
 }
 
 footer {
-  height: 10%;
+  height: 5%;
   background-color: lightskyblue;
-  border-top: solid 5pt black;
+  border-top: solid 3pt #5f05ba;
 }
 
 footer > p {
@@ -37,4 +46,26 @@ footer > p {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+form {
+  width: 100%;
+  height: 40%;
+  margin: auto;
+  border-top: solid 2pt #5f05ba;
+}
+
+input[type="text"] {
+  width: 80%;
+  height: 100%;
+  font-size: 18px;
+  padding: 8px;
+}
+
+input[type="button"] {
+  width: 20%;
+  height: 100%;
+  background: #da0704;
+  color: white;
+  border: none;
 }

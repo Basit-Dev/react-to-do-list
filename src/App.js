@@ -8,10 +8,20 @@ export default function App() {
     <div className="App">
       <header>
         <h1>To Do List</h1>
+        <form>
+          <input className="input" type="text" placeholder="Add Items" />
+          <input type="button" value="Add to List" />
+        </form>
       </header>
       <main>
         {list.map((listItems) => {
-          return <li>{listItems.item}</li>;
+          return (
+            <li>
+              <input type="checkbox" />
+              {listItems.item}
+              <button>Delete</button>
+            </li>
+          );
         })}
       </main>
       <footer>
