@@ -9,8 +9,8 @@ export default function App() {
 
   let getInputValue;
 
-  const getInput = function (e) {
-    getInputValue = e;
+  const addToList = (e) => {
+    getInputValue = e.target.value;
     return getInputValue;
   };
 
@@ -19,11 +19,7 @@ export default function App() {
       <header>
         <h1>To Do List</h1>
         <form>
-          <input
-            onChange={(e) => getInput(e.target.value)}
-            type="text"
-            placeholder="Add Items"
-          />
+          <input onChange={addToList} type="text" placeholder="Add Items" />
           <input
             onClick={() => [
               itemList.push(getInputValue),
