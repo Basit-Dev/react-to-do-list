@@ -4,8 +4,8 @@ import { MdDelete } from "react-icons/md";
 import { useState } from "react";
 
 export default function App() {
-  const [list, setList] = useState(listItems);
-  const itemList = [];
+  // const [list, setList] = useState(listItems);
+  const [itemList, setItemList] = useState([]);
 
   let getInputValue;
 
@@ -14,28 +14,27 @@ export default function App() {
     return getInputValue;
   };
 
+  const displayInputList = () => {
+    itemList.push(getInputValue);
+    const newList = itemList.map((data) => data);
+    setItemList(newList);
+  };
+
   return (
     <div className="app">
       <header>
         <h1>To Do List</h1>
         <form>
           <input onChange={addToList} type="text" placeholder="Add Items" />
-          <input
-            onClick={() => [
-              itemList.push(getInputValue),
-              console.log(itemList)
-            ]}
-            type="button"
-            value="Add to List"
-          />
+          <input onClick={displayInputList} type="button" value="Add to List" />
         </form>
       </header>
       <main>
-        {list.map((listItems) => {
+        {itemList.map((listItems) => {
           return (
             <li key={listItems.id}>
               <input type="checkbox" />
-              <span>{listItems.item}</span>
+              <span>{listItems}</span>
               <MdDelete onClick={() => null} className="delete-btn" />
             </li>
           );
