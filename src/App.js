@@ -5,22 +5,42 @@ import { useState } from "react";
 
 export default function App() {
   const [list, setList] = useState(listItems);
+  const itemList = [];
+
+  let getInputValue;
+
+  const getInput = function (e) {
+    getInputValue = e;
+    return getInputValue;
+  };
+
   return (
-    <div className="App">
+    <div className="app">
       <header>
         <h1>To Do List</h1>
         <form>
-          <input className="input" type="text" placeholder="Add Items" />
-          <input type="button" value="Add to List" />
+          <input
+            onChange={(e) => getInput(e.target.value)}
+            type="text"
+            placeholder="Add Items"
+          />
+          <input
+            onClick={() => [
+              itemList.push(getInputValue),
+              console.log(itemList)
+            ]}
+            type="button"
+            value="Add to List"
+          />
         </form>
       </header>
       <main>
         {list.map((listItems) => {
           return (
-            <li>
+            <li key={listItems.id}>
               <input type="checkbox" />
               <span>{listItems.item}</span>
-              <MdDelete className="delete" />
+              <MdDelete onClick={() => null} className="delete-btn" />
             </li>
           );
         })}

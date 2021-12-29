@@ -5,7 +5,7 @@ body,
   box-sizing: border-box;
 }
 
-.App {
+.app {
   font-family: sans-serif;
   text-align: center;
   height: 100vh;
@@ -28,6 +28,7 @@ main {
   height: 80%;
   padding: 20px;
   text-align: left;
+  border-top: solid 3pt #5f05ba;
 }
 li {
   position: relative;
@@ -48,12 +49,18 @@ li > input {
 li > span {
   padding-left: 35px;
 }
-li > .delete {
+li > .delete-btn {
   position: absolute;
   right: 0;
   height: 30px;
   width: 30px;
   color: rgb(223, 21, 21);
+  border: none;
+  background: none;
+}
+li > .delete-btn:hover {
+  cursor: grab;
+  color: black;
 }
 
 footer {
@@ -76,17 +83,21 @@ form {
   border-top: solid 2pt #5f05ba;
 }
 
-input[type="text"] {
+form > input[type="text"] {
   width: 80%;
   height: 100%;
   font-size: 18px;
   padding: 8px;
+  /*  */
 }
 
-input[type="button"] {
+form > input[type="button"] {
   width: 20%;
   height: 100%;
   background: #0b8f3b;
   color: white;
   border: none;
+}
+form > input[type="button"]:hover {
+  background-color: rgb(160, 160, 160);
 }
