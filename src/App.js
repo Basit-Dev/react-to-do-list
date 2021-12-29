@@ -31,6 +31,7 @@ export default function App() {
             type="text"
             placeholder="Add Items"
             value={inputValue}
+            autoFocus
           />
           <input onClick={displayInputList} type="button" value="Add to List" />
         </form>
