@@ -1,23 +1,24 @@
 import "./styles.css";
-import listItems from "./listItems";
+// import listItems from "./listItems";
 import { MdDelete } from "react-icons/md";
 import { useState } from "react";
 
 export default function App() {
   // const [list, setList] = useState(listItems);
   const [itemList, setItemList] = useState([]);
-
-  let getInputValue;
+  const [inputValue, setInputValue] = useState("");
 
   const addToList = (e) => {
-    getInputValue = e.target.value;
-    return getInputValue;
+    setInputValue(e.target.value);
+  };
+  const resetInputField = () => {
+    setInputValue("");
   };
 
   const displayInputList = () => {
-    itemList.push(getInputValue);
-    const newList = itemList.map((data) => data);
-    setItemList(newList);
+    !inputValue ? alert("You need to add a item") : itemList.push(inputValue);
+    setItemList(itemList.map((data) => data));
+    resetInputField();
   };
 
   return (
@@ -25,14 +26,19 @@ export default function App() {
       <header>
         <h1>To Do List</h1>
         <form>
-          <input onChange={addToList} type="text" placeholder="Add Items" />
+          <input
+            onChange={addToList}
+            type="text"
+            placeholder="Add Items"
+            value={inputValue}
+          />
           <input onClick={displayInputList} type="button" value="Add to List" />
         </form>
       </header>
       <main>
         {itemList.map((listItems) => {
           return (
-            <li key={listItems.id}>
+            <li key={listItems}>
               <input type="checkbox" />
               <span>{listItems}</span>
               <MdDelete onClick={() => null} className="delete-btn" />
